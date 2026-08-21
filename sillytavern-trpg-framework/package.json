@@ -1,0 +1,10 @@
+{
+  "name": "sillytavern-trpg-framework",
+  "private": true,
+  "type": "module",
+  "description": "A tabletop RPG framework extension for SillyTavern (State Tracker, Hybrid RNG, Lorebook Agent).",
+  "scripts": {
+    "test": "node --test"
+  }
+}
+

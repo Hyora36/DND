@@ -1,0 +1,11 @@
+{
+    "display_name": "TRPG Framework",
+    "version": "1.0.0",
+    "author": "Codex",
+    "js": "index.js",
+    "css": "style.css",
+    "loading_order": 20,
+    "generate_interceptor": "rpgTrackerInterceptor",
+    "homePage": "https://github.com/MultihogAurelius/SillyTavern-MultihogDnDFramework",
+    "auto_update": false
+}

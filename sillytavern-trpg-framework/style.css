@@ -1,0 +1,304 @@
+/* TRPG Framework — panel + settings styling */
+
+#trpg-framework-panel {
+    --trpg-bg: var(--SmartThemeBlurTintColor, #1e1e2e);
+    --trpg-border: var(--SmartThemeBorderColor, #444);
+    --trpg-accent: #d4a028;
+    --trpg-text: var(--SmartThemeMainColor, #ddd);
+    --trpg-muted: var(--SmartThemeQuoteColor, #999);
+
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 30000;
+    width: 340px;
+    max-height: calc(100vh - 160px);
+    display: none;
+    flex-direction: column;
+    background: var(--trpg-bg);
+    border: 1px solid var(--trpg-border);
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    color: var(--trpg-text);
+    font-size: 13px;
+    overflow: hidden;
+}
+
+#trpg-framework-panel.trpg-visible {
+    display: flex;
+}
+
+#trpg-framework-panel .trpg-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--trpg-border);
+    flex: 0 0 auto;
+}
+
+#trpg-framework-panel .trpg-panel-title {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#trpg-framework-panel .trpg-panel-title i {
+    color: var(--trpg-accent);
+    margin-right: 6px;
+}
+
+#trpg-framework-panel .trpg-panel-status {
+    color: var(--trpg-muted);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+#trpg-framework-panel .trpg-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--trpg-text);
+    border: 1px solid var(--trpg-border);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 1.3;
+}
+
+#trpg-framework-panel .trpg-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+#trpg-framework-panel .trpg-btn-icon {
+    padding: 4px 7px;
+}
+
+#trpg-framework-panel .trpg-btn-danger:hover {
+    background: rgba(220, 60, 60, 0.25);
+}
+
+#trpg-framework-panel .trpg-panel-body {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#trpg-framework-panel .trpg-panel-body.trpg-collapsed {
+    display: none;
+}
+
+#trpg-framework-panel .trpg-combat-badge {
+    background: rgba(200, 40, 40, 0.25);
+    border: 1px solid rgba(220, 60, 60, 0.5);
+    color: #ff8080;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px;
+    font-size: 12px;
+}
+
+#trpg-framework-panel .trpg-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 10px;
+}
+
+#trpg-framework-panel .trpg-fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: var(--trpg-muted);
+    gap: 2px;
+}
+
+#trpg-framework-panel .trpg-fields input,
+#trpg-framework-panel .trpg-lists textarea,
+#trpg-framework-panel .trpg-raw {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--trpg-border);
+    border-radius: 5px;
+    color: var(--trpg-text);
+    padding: 4px 6px;
+    font-size: 12px;
+}
+
+#trpg-framework-panel .trpg-hp-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#trpg-framework-panel .trpg-hp-wrap input {
+    flex: 1;
+}
+
+#trpg-framework-panel .trpg-hp-bar {
+    height: 10px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--trpg-border);
+    overflow: hidden;
+}
+
+#trpg-framework-panel .trpg-hp-bar-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #2e9e5b, #58c982);
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+#trpg-framework-panel .trpg-hp-bar-fill.trpg-low {
+    background: linear-gradient(90deg, #c0392b, #e74c3c);
+}
+
+#trpg-framework-panel .trpg-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#trpg-framework-panel .trpg-lists label {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: var(--trpg-muted);
+    gap: 3px;
+}
+
+#trpg-framework-panel .trpg-hint {
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+#trpg-framework-panel .trpg-lists textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+#trpg-framework-panel .trpg-memo summary {
+    cursor: pointer;
+    color: var(--trpg-muted);
+    font-size: 11px;
+    user-select: none;
+}
+
+#trpg-framework-panel .trpg-memo pre {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--trpg-border);
+    border-radius: 5px;
+    padding: 6px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 180px;
+    overflow-y: auto;
+    font-size: 11px;
+    color: var(--trpg-text);
+}
+
+#trpg-framework-panel .trpg-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#trpg-framework-panel .trpg-actions select {
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--trpg-text);
+    border: 1px solid var(--trpg-border);
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 3px 4px;
+}
+
+#trpg-framework-panel .trpg-raw {
+    min-height: 120px;
+    font-family: var(--mono-font-family, monospace);
+    font-size: 11px;
+}
+
+#trpg-framework-panel .trpg-log {
+    font-size: 11px;
+    color: var(--trpg-accent);
+    min-height: 16px;
+    opacity: 0.9;
+}
+
+#trpg-framework-panel .trpg-log.trpg-log-new {
+    animation: trpg-log-fade 2.5s ease;
+}
+
+@keyframes trpg-log-fade {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* ── Settings drawer ─────────────────────────────────────────────────── */
+
+#trpg-settings-block {
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.12);
+    color: var(--SmartThemeMainColor, #ddd);
+    font-size: 13px;
+}
+
+#trpg-settings-block .trpg-settings-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--SmartThemeMainColor, #ddd);
+}
+
+#trpg-settings-block .trpg-settings-title i {
+    color: #d4a028;
+    margin-right: 6px;
+}
+
+#trpg-settings-block .trpg-settings-section {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #d4a028;
+    margin: 10px 0 4px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, #444);
+    padding-bottom: 2px;
+}
+
+#trpg-settings-block .trpg-setting-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    flex-wrap: wrap;
+}
+
+#trpg-settings-block .trpg-setting-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--SmartThemeMainColor, #ddd);
+}
+
+#trpg-settings-block .trpg-setting-row input[type="text"],
+#trpg-settings-block .trpg-setting-row input[type="number"],
+#trpg-settings-block .trpg-setting-row select {
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--SmartThemeMainColor, #ddd);
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 5px;
+    padding: 3px 5px;
+}
